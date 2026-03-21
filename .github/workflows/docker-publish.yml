@@ -7,9 +7,11 @@ on:
     tags:
       - 'v*.*.*'
     paths:
+      - '.github/**'
       - 'apps/login/**'
       - 'packages/**'
       - 'proto/**'
+      - 'custom/**'
       - 'package.json'
       - 'pnpm-workspace.yaml'
       - 'pnpm-lock.yaml'

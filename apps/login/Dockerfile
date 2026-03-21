@@ -4,21 +4,22 @@
 FROM node:22-bookworm-slim AS builder
 
 RUN apt-get update && apt-get install -y git
-
 WORKDIR /app
 
 RUN corepack enable
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN pnpm config set store-dir /pnpm/store
 
 COPY . .
 
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
-    pnpm install
-
-RUN pnpm --filter @zitadel/proto generate
-RUN pnpm --filter @zitadel/login... build
+RUN \
+    --mount=type=cache,id=pnpm-store,target=/pnpm/store pnpm install && \
+    cp custom/custom-theme.env apps/login/.env.production && \
+    cat custom/custom.scss >> apps/login/src/styles/globals.scss && \
+    pnpm --filter @zitadel/proto generate && \
+    pnpm --filter @zitadel/login... build
 
 # ==========================================
 # Stage 2: Runner

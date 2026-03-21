@@ -5,16 +5,12 @@ This repo exists for a customized Zitadel Login docker container
 ## Developers
 ```shell
 # clone the repo that is a fork from https://github.com/zitadel/zitadel
-git clone https://github.com/ndejong-psaintelligence/zitadel-login
+git clone https://github.com/psaintelligence/zitadel-login
 cd zitadel-login
 
 # sparse checkout the login app
 git sparse-checkout init --cone
-git sparse-checkout set apps/login packages/shared
-git sparse-checkout add apps
-git sparse-checkout add proto
-git sparse-checkout add packages
-git sparse-checkout add .github
+git sparse-checkout set .github apps proto packages custom
 
 # track upstream
 git branch upstream
