@@ -478,6 +478,15 @@ async function handleAutoCreation(ctx: IDPHandlerContext): Promise<IDPHandlerRes
       org: { case: "orgId", value: orgToRegisterOn },
     });
 
+    if (addHumanUser.profile) {
+      if (!addHumanUser.profile.familyName || addHumanUser.profile.familyName.trim() === "") {
+        addHumanUser.profile.familyName = addHumanUser.profile.givenName && addHumanUser.profile.givenName.trim() !== ""
+          ? addHumanUser.profile.givenName
+          : "-";
+        logger.info("Auto-creation: Applied fallback familyName", { newFamilyName: addHumanUser.profile.familyName });
+      }
+    }
+
     const addHumanUserWithOrganization = create(AddHumanUserRequestSchema, {
       ...addHumanUser,
       organization: organizationSchema,
