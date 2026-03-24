@@ -70,9 +70,37 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 >
                   <div className="relative mx-auto w-full max-w-[1100px] py-8">
                     <div>{children}</div>
-                    <div className="mx-auto flex max-w-[440px] flex-row items-center justify-end space-x-4 px-4 py-4 md:max-w-full md:px-8">
-                      <LanguageSwitcher languages={languages} />
-                      <ThemeSwitch />
+
+                    <div className="mx-auto flex w-full max-w-[440px] flex-row items-center justify-between px-4 py-4 md:max-w-full md:px-8">
+                      <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400 ml-2 md:ml-2">
+
+                        {process.env.NEXT_PUBLIC_TOS_URL && (
+                          <a
+                            href={process.env.NEXT_PUBLIC_TOS_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                          >
+                            Terms of Service
+                          </a>
+                        )}
+                        {process.env.NEXT_PUBLIC_PRIVACY_URL && (
+                          <a
+                            href={process.env.NEXT_PUBLIC_PRIVACY_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                          >
+                            Privacy Policy
+                          </a>
+                        )}
+                      </div>
+
+                      <div className="flex items-center space-x-4">
+                        <LanguageSwitcher languages={languages} />
+                        <ThemeSwitch />
+                      </div>
+
                     </div>
                   </div>
                 </BackgroundWrapper>

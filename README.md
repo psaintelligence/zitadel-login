@@ -1,6 +1,11 @@
 # Zitadel Login
 
-This repo exists for a customized Zitadel Login docker container
+This repo exists to produce a customized Zitadel Login docker container that is generic enough for general use.
+
+## Configuration
+Set the following env-vars at container run-time to enable "Terms of Service" and "Privacy Policy" links
+* `NEXT_PUBLIC_TOS_URL`
+* `NEXT_PUBLIC_PRIVACY_URL`
 
 ## Developers
 ```shell
