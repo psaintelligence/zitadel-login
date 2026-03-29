@@ -3,9 +3,16 @@
 This repo exists to produce a customized Zitadel Login docker container that is generic enough for general use.
 
 ## Configuration
-Set the following env-vars at container run-time to enable "Terms of Service" and "Privacy Policy" links
-* `NEXT_PUBLIC_TOS_URL`
-* `NEXT_PUBLIC_PRIVACY_URL`
+The following env-vars are available to set links in the footer
+
+#### Left hand side footer links
+* `NEXT_PUBLIC_FOOTER_L1_URL` & `NEXT_PUBLIC_FOOTER_L1_TEXT`
+* `NEXT_PUBLIC_FOOTER_L2_URL` & `NEXT_PUBLIC_FOOTER_L2_TEXT`
+* `NEXT_PUBLIC_FOOTER_L3_URL` & `NEXT_PUBLIC_FOOTER_L3_TEXT`
+
+#### Right hand side footer links
+* `NEXT_PUBLIC_FOOTER_R1_URL` & `NEXT_PUBLIC_FOOTER_R1_TEXT`
+* `NEXT_PUBLIC_FOOTER_R2_URL` & `NEXT_PUBLIC_FOOTER_R2_TEXT`
 
 ## Developers
 ```shell
