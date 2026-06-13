@@ -1,0 +1,45 @@
+# Git history (Crucial: This can be massive)
+.git
+.gitignore
+.gitmodules
+
+# Dependencies (Let the builder install these fresh)
+node_modules
+**/node_modules
+
+# Next.js & Build Artifacts (Prevents copying your local host builds)
+.next
+**/.next
+dist
+**/dist
+build
+**/build
+out
+**/out
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local Environment Variables (Security: Prevents leaking local secrets into the image)
+.env
+.env.*
+!.env.example
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Docker
+.dockerignore
+# We don't ignore the Dockerfile here because we are passing it via the -f flag from a subdirectory,
+# but generally, it's good practice not to include it in the context payload.
