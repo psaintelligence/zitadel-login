@@ -23,6 +23,7 @@ services:
     command: >
       sh -c "corepack enable && 
              pnpm install --filter ./apps/login... && 
+             pnpm nx run @zitadel/client:build && 
              cd apps/login && 
              pnpm dev"
 
