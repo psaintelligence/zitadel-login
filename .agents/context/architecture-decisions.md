@@ -11,7 +11,7 @@ Format: lightweight ADR — Status / Context / Decision / Consequences.
 - **Context**: The platform requires a heavily customized ZITADEL login portal, but we must track upstream developments and security fixes from [zitadel/zitadel](https://github.com/zitadel/zitadel) without maintaining a full, bloated clone of the entire platform.
 - **Decision**: Fork the upstream repository and use a **Git sparse-checkout** configuration:
   ```bash
-  git sparse-checkout set .github .agent apps proto packages custom
+  git sparse-checkout set .agents .github apps proto packages custom
   ```
 - **Consequences**:
   - Focuses local developer resources and AI agents on the components relevant to customize and package the login page.

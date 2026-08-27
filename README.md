@@ -39,4 +39,4 @@ docker build -t zitadel-login-$(date -u +%Y%m%dz%H%M%S) -f apps/login/Dockerfile
 Our custom commits live directly on the `psaintel` branch as a linear sequence of commits on top of a pinned upstream release tag (e.g., `v4.15.1`).
 
 Detailed instructions for upgrading the base tag, rebasing, resolving conflicts, and regenerating the lockfile are documented in:
-- **[Upstream Synchronization Workflow](file:///home/ndejong/cyberco/projects/psaintelligence-platform/zitadel-login/.agent/workflows/upstream-sync.md)**
+- **[Upstream Synchronization Workflow](.agents/workflows/upstream-sync.md)**

@@ -5,7 +5,7 @@ This document outlines the authoritative critical rules for AI coding agents wor
 ## Rules
 
 1. **Maintain Sparse-Checkout Integrity**
-   This repository is a sparse-checkout of [zitadel/zitadel](https://github.com/zitadel/zitadel). Only touch directories in the checkout: `.github`, `apps`, `proto`, `packages`, and `custom`.
+   This repository is a sparse-checkout of [zitadel/zitadel](https://github.com/zitadel/zitadel). Only touch directories in the checkout: `.agents`, `.github`, `apps`, `proto`, `packages`, and `custom`.
 
 2. **Follow Component-Level Guides**
    Sub-projects have their own specialized `AGENTS.md` files. Always read them before working in those directories.
@@ -14,7 +14,7 @@ This document outlines the authoritative critical rules for AI coding agents wor
    Do not hardcode configuration settings, especially those relating to custom themes, layouts, footer text, or URLs. Use environment variables defined in `.env.theme.example` and the root `README.md`.
 
 4. **Apply Karpathy Guidelines**
-   Adhere to the behavioral guidelines to minimize mistakes (simplicity first, surgical edits, explicit assumptions, and goal-driven execution). See the [Karpathy Guidelines Skill](file:///home/ndejong/cyberco/projects/psaintelligence-platform/zitadel-login/.agent/skills/karpathy-guidelines/SKILL.md).
+   Adhere to the behavioral guidelines to minimize mistakes (simplicity first, surgical edits, explicit assumptions, and goal-driven execution). See the [Karpathy Guidelines Skill](../skills/karpathy-guidelines/SKILL.md).
 
 5. **Rebase-Based Upstream Tracking**
    Upstream releases are tracked on the `psaintel` branch by rebasing on top of the pinned upstream release tag (using `git rebase --onto`). Do not maintain a separate `patches` branch or raw `.patch` files. All custom changes are committed directly to the `psaintel` branch.
