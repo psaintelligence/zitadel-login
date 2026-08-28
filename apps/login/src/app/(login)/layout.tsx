@@ -65,27 +65,37 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               }
             >
               <LanguageProvider>
-                <BackgroundWrapper className={`relative flex min-h-screen flex-col justify-center bg-background-light-600 dark:bg-background-dark-600`} >
+                <BackgroundWrapper
+                  className={`bg-background-light-600 dark:bg-background-dark-600 relative flex min-h-screen flex-col justify-center`}
+                >
                   <div className="relative mx-auto w-full max-w-[1100px] py-8">
                     <div>{children}</div>
 
                     {/* Unified Footer Container */}
-                    <div className="mx-auto flex w-full max-w-[440px] flex-col md:flex-row items-center justify-between gap-y-4 px-4 py-4 md:max-w-full md:px-8">
-
+                    <div className="mx-auto flex w-full max-w-[440px] flex-col items-center justify-between gap-y-4 px-4 py-4 md:max-w-full md:flex-row md:px-8">
                       {/* Left Side Links */}
-                      <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-500 dark:text-gray-400 ml-2 md:ml-2">
+                      <div className="ml-2 flex flex-wrap gap-4 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
                         {process.env.NEXT_PUBLIC_FOOTER_L1_URL && process.env.NEXT_PUBLIC_FOOTER_L1_TEXT && (
-                          <a href={process.env.NEXT_PUBLIC_FOOTER_L1_URL} className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                          <a
+                            href={process.env.NEXT_PUBLIC_FOOTER_L1_URL}
+                            className="transition-colors hover:text-gray-900 dark:hover:text-gray-100"
+                          >
                             {process.env.NEXT_PUBLIC_FOOTER_L1_TEXT}
                           </a>
                         )}
                         {process.env.NEXT_PUBLIC_FOOTER_L2_URL && process.env.NEXT_PUBLIC_FOOTER_L2_TEXT && (
-                          <a href={process.env.NEXT_PUBLIC_FOOTER_L2_URL} className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                          <a
+                            href={process.env.NEXT_PUBLIC_FOOTER_L2_URL}
+                            className="transition-colors hover:text-gray-900 dark:hover:text-gray-100"
+                          >
                             {process.env.NEXT_PUBLIC_FOOTER_L2_TEXT}
                           </a>
                         )}
                         {process.env.NEXT_PUBLIC_FOOTER_L3_URL && process.env.NEXT_PUBLIC_FOOTER_L3_TEXT && (
-                          <a href={process.env.NEXT_PUBLIC_FOOTER_L3_URL} className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                          <a
+                            href={process.env.NEXT_PUBLIC_FOOTER_L3_URL}
+                            className="transition-colors hover:text-gray-900 dark:hover:text-gray-100"
+                          >
                             {process.env.NEXT_PUBLIC_FOOTER_L3_TEXT}
                           </a>
                         )}
@@ -93,17 +103,26 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
                       {/* Right Side Links & Switchers */}
                       <div className="flex flex-wrap items-center justify-center gap-4">
-
                         {/* Only render this wrapper (and its border) if at least one right-side link exists */}
                         {(process.env.NEXT_PUBLIC_FOOTER_R1_URL || process.env.NEXT_PUBLIC_FOOTER_R2_URL) && (
-                          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 md:mr-2 md:border-r border-gray-300 dark:border-gray-700 md:pr-4">
+                          <div className="flex items-center gap-4 border-gray-300 text-sm text-gray-500 md:mr-2 md:border-r md:pr-4 dark:border-gray-700 dark:text-gray-400">
                             {process.env.NEXT_PUBLIC_FOOTER_R1_URL && process.env.NEXT_PUBLIC_FOOTER_R1_TEXT && (
-                              <a href={process.env.NEXT_PUBLIC_FOOTER_R1_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                              <a
+                                href={process.env.NEXT_PUBLIC_FOOTER_R1_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transition-colors hover:text-gray-900 dark:hover:text-gray-100"
+                              >
                                 {process.env.NEXT_PUBLIC_FOOTER_R1_TEXT}
                               </a>
                             )}
                             {process.env.NEXT_PUBLIC_FOOTER_R2_URL && process.env.NEXT_PUBLIC_FOOTER_R2_TEXT && (
-                              <a href={process.env.NEXT_PUBLIC_FOOTER_R2_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                              <a
+                                href={process.env.NEXT_PUBLIC_FOOTER_R2_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transition-colors hover:text-gray-900 dark:hover:text-gray-100"
+                              >
                                 {process.env.NEXT_PUBLIC_FOOTER_R2_TEXT}
                               </a>
                             )}
@@ -118,7 +137,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                       </div>
                     </div>
                     {/* End of Unified Footer Container */}
-
                   </div>
                 </BackgroundWrapper>
               </LanguageProvider>

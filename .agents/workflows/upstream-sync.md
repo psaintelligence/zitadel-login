@@ -4,10 +4,10 @@ This document describes how to track upstream releases and upgrade the base ZITA
 
 ## Architecture
 
-Our custom commits live directly on the `psaintel` branch as a linear sequence of commits on top of a pinned upstream release tag (e.g., `v4.15.1`).
+Our custom commits live directly on the `psaintel` branch as a linear sequence of commits on top of a pinned upstream release tag (e.g., `v4.17.1`).
 
 ```
-              v4.15.1 (Upstream Tag)
+              v4.17.1 (Upstream Tag)
                  │
                  ├──► Commit 1: build/compose customizations
                  ├──► Commit 2: theme settings
@@ -18,7 +18,7 @@ Our custom commits live directly on the `psaintel` branch as a linear sequence o
 
 ## Workflow: Upgrading Upstream Base Tag
 
-To upgrade the base ZITADEL release (e.g., from `v4.15.1` to `v4.16.0`):
+To upgrade the base ZITADEL release (e.g., from `v4.17.1` to `v4.18.0`):
 
 ### 1. Fetch Upstream Tags
 Fetch the latest tags from the upstream repository:
@@ -27,9 +27,9 @@ git fetch upstream --tags
 ```
 
 ### 2. Rebase `psaintel` onto the New Tag
-Assume the old tag is `v4.15.1` and the new tag is `v4.16.0`:
+Assume the old tag is `v4.17.1` and the new tag is `v4.18.0`:
 ```bash
-git rebase --onto v4.16.0 v4.15.1 psaintel
+git rebase --onto v4.18.0 v4.17.1 psaintel
 ```
 
 ### 3. Resolve Conflicts (if any)

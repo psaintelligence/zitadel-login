@@ -617,16 +617,6 @@ async function handleAutoCreation(ctx: IDPHandlerContext): Promise<IDPHandlerRes
       return { redirect: `/idp/${provider}/failure?${params}&error=no_organization_context` };
     }
 
-    if (createUserData.profile) {
-      if (!createUserData.profile.familyName || createUserData.profile.familyName.trim() === "") {
-        createUserData.profile.familyName =
-          createUserData.profile.givenName && createUserData.profile.givenName.trim() !== ""
-            ? createUserData.profile.givenName
-            : "-";
-        logger.info("Auto-creation: Applied fallback familyName", { newFamilyName: createUserData.profile.familyName });
-      }
-    }
-
     // Check if required profile fields are present
     if (!createUserData.profile?.givenName || !createUserData.profile?.familyName) {
       logger.info("Missing required profile fields (givenName or familyName), redirecting to complete registration");
